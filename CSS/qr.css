@@ -1,0 +1,65 @@
+
+.container {
+    display: block;
+    position: relative;
+    font-family: "Arial Black";
+}
+#qrOutput {
+    display: none;
+}
+.qrblock {
+    display: block;
+    text-align: center;
+}
+.searchBox{
+    text-align: center;
+}
+.resetQr {
+    text-align: center;
+    margin-top: 2rem;
+}
+.titleQr {
+    font-size: 45px;
+    font-weight: bold;
+}
+p.qrcomment {
+    background: #7acdee;
+    text-align: center;
+    color: #000000;
+    padding: 7px 35px 8px;
+    border-radius: 9999px;
+    display: inline-block;
+    margin: 0 0 25px;
+    position: relative;
+}
+p.qrcomment:after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    margin-left: -15px;
+    border: 15px solid transparent;
+    border-top: 15px solid #7acdee;
+    z-index: 1;
+}
+#isbn{
+    width: 400px;
+    height: 30px;
+    font-size: 15px;
+}
+#getqrInfo {
+    height: 35px;
+    font-weight: bold;
+    background-color: rgb(230, 128, 55);
+}
+#qrReset {
+    font-size: 30px;
+    font-weight: bold;
+    background-color: rgb(255, 84, 84);
+}
+#qrOutput {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}

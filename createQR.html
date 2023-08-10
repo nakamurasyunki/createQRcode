@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QR作成！！</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="qrblock">
+            <p class="titleQr">QRコード作成</p>
+            <p class="qrcomment">QRコードで生成したいURLを入力してください。</p>
+        </div>
+        <div class="row mt-5 searchBox">
+            <input id="isbn" type="text" name="isbn" value=""> <button id="getqrInfo" class="btn btn-default">QRコードを生成</button>
+        </div>
+        <div id="qrOutput">
+            <canvas id="qr"></canvas>
+            <!-- <div class="ml-2"><img id="newImg"></div> -->
+        </div>
+        <div class="resetQr">
+        <input id="qrReset" type="button" value="URLリセット" onclick="window.location.reload();" />
+        </div>
+    </div>
+    <link rel="stylesheet" href="CSS/qr.css" />
+    <link rel="stylesheet" href="CSS/background.css" />
+    <script>
+    document.getElementById('getqrInfo').addEventListener('click', () => {
+        // 入力された文字列を取得
+        var userInput = document.getElementById('isbn').value;
+        var query = userInput.split(' ').join('+');
+        // QRコードの生成
+        (function() {
+        var qr = new QRious({
+            element: document.getElementById('qr'),
+            // 入力した文字列でQRコード生成
+            value: query
+        });
+        qr.background = '#FFF'; //背景色
+        qr.backgroundAlpha = 0.8; // 背景の透過率
+        qr.foreground = '#000000'; //QRコード自体の色
+        qr.foregroundAlpha = 1.0; //QRコード自体の透過率
+        qr.level = 'L'; // QRコードの誤り訂正レベル
+        qr.size = 240; // QRコードのサイズ
+        // QRコードをflexboxで表示
+        document.getElementById('qrOutput').style.display = 'flex';
+        })();
+    // png出力用コード
+    //var cvs = document.getElementById("qr");
+    //var png = cvs.toDataURL();
+    //document.getElementById("newImg").src = png;
+    });
+    </script>
+</body>
+
+</html>

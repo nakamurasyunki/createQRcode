@@ -1,34 +1,42 @@
-.container {
+@media screen and (max-width: 480px) {
+
+  /* 480px以下に適用されるCSS（スマホ用） */
+  .container {
     display: block;
     position: relative;
     font-family: "Arial Black";
-}
+  }
 
-#qrOutput {
+  #main {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #qrOutput {
     display: none;
-}
+  }
 
-.qrblock {
+  .qrblock {
     display: block;
     text-align: center;
-}
+  }
 
-.searchBox {
+  .searchBox {
     text-align: center;
-}
+  }
 
-.resetQr {
+  .resetQr {
     text-align: center;
     margin-top: 5px;
-}
+  }
 
-.titleQr {
-    font-size: 45px;
+  .titleQr {
+    font-size: 5vh;
     margin: 20px;
     font-weight: bold;
-}
+  }
 
-p.qrcomment {
+  p.qrcomment {
     background: #7acdee;
     text-align: center;
     color: #000000;
@@ -37,9 +45,9 @@ p.qrcomment {
     display: inline-block;
     margin: 0 0 25px;
     position: relative;
-}
+  }
 
-p.qrcomment:after {
+  p.qrcomment:after {
     content: "";
     position: absolute;
     bottom: -25px;
@@ -48,34 +56,37 @@ p.qrcomment:after {
     border: 15px solid transparent;
     border-top: 15px solid #7acdee;
     z-index: 1;
-}
+  }
 
-#qrDownload {
+  #qrDownload {
     text-align: center;
     visibility: hidden;
-}
+  }
 
-#isbn {
-    width: 400px;
+  #isbn {
+    width: 300px;
     height: 30px;
     font-size: 15px;
-}
+  }
 
-#getqrInfo {
+  #getqrInfo {
     height: 35px;
+    margin-top: 20px;
     font-weight: bold;
     background-color: rgb(230, 128, 55);
-}
+  }
 
-#qrReset {
+  #qrReset {
     font-size: 30px;
     font-weight: bold;
+    margin-top: 20px;
     background-color: rgb(255, 84, 84);
-}
+  }
 
-#qrOutput {
+  #qrOutput {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
     padding: 20px;
+  }
 }

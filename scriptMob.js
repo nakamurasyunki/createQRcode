@@ -17,7 +17,6 @@ document.getElementById('getqrInfo-mob').addEventListener('click', () => {
     qr.size = 200; // QRコードのサイズ
     // QRコードをflexboxで表示
     document.getElementById('qrOutput-mob').style.display = 'flex';
-    document.getElementById('qrDownload-mob').innerHTML = 'ダウンロード方法：画像長押しで画像を保存';
     document.getElementById('qrDownload-mob').style.visibility = 'visible';
   })();
   // png出力用コード

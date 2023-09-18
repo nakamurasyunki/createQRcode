@@ -21,7 +21,8 @@ document.getElementById('getqrInfo-mob').addEventListener('click', () => {
     document.getElementById('qrDownload-mob').style.visibility = 'visible';
   })();
   // png出力用コード
-  //var cvs = document.getElementById("qr");
-  //var png = cvs.toDataURL();
-  //document.getElementById("newImg").src = png;
+  var cvs = document.getElementById("qr");
+  var png = cvs.toDataURL();
+  document.getElementById("newImg").src = png;
+  document.getElementById('qrOutput-mob').style.display = 'none';
 });

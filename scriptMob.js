@@ -23,6 +23,10 @@ document.getElementById('getqrInfo-mob').addEventListener('click', () => {
   // png出力用コード
   var cvs = document.getElementById("qr-mob");
   var png = cvs.toDataURL();
+  const link = document.getElementById("download");
   document.getElementById("newImg").src = png;
+  link.setAttribute("href", png);
+  link.style.display = 'flex';
+  document.getElementsByClassName("downloadBtn")[0].style.display = 'flex';
   document.getElementById('qr-mob').style.display = 'none';
 });

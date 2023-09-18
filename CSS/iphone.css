@@ -93,4 +93,14 @@
     justify-content: space-around;
     padding: 20px;
   }
+
+  .downloadBtn {
+    display: none;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  #download {
+    display: none;
+  }
 }

@@ -33,69 +33,29 @@
             </div>
         </div>
     </div>
-    <script>
-        const windowWidth = $(window).width();
-        const windowSm = 480;
-        if (windowWidth <= windowSm) {
-            //横幅480px以下（スマホ）に適用させるJavaScriptを記述
-            document.getElementById('getqrInfo').addEventListener('click', () => {
-                // 入力された文字列を取得
-                var userInput = document.getElementById('isbn').value;
-                var query = userInput.split(' ').join('+');
-                // QRコードの生成
-                (function () {
-                    var qr = new QRious({
-                        element: document.getElementById('qr'),
-                        // 入力した文字列でQRコード生成
-                        value: query
-                    });
-                    qr.background = '#FFF'; //背景色
-                    qr.backgroundAlpha = 0.8; // 背景の透過率
-                    qr.foreground = '#000000'; //QRコード自体の色
-                    qr.foregroundAlpha = 1.0; //QRコード自体の透過率
-                    qr.level = 'L'; // QRコードの誤り訂正レベル
-                    qr.size = 240; // QRコードのサイズ
-                    // QRコードをflexboxで表示
-                    document.getElementById('qrOutput').style.display = 'flex';
-                    document.getElementById('qrDownload').innerHTML = 'ダウンロード方法：画像長押しで画像を保存';
-                    document.getElementById('qrDownload').style.visibility = 'visible';
-                })();
-                // png出力用コード
-                //var cvs = document.getElementById("qr");
-                //var png = cvs.toDataURL();
-                //document.getElementById("newImg").src = png;
-            });
-        } else {
-            //横幅480px以上（PC、タブレット）に適用させるJavaScriptを記述
-            document.getElementById('getqrInfo').addEventListener('click', () => {
-                // 入力された文字列を取得
-                var userInput = document.getElementById('isbn').value;
-                var query = userInput.split(' ').join('+');
-                // QRコードの生成
-                (function () {
-                    var qr = new QRious({
-                        element: document.getElementById('qr'),
-                        // 入力した文字列でQRコード生成
-                        value: query
-                    });
-                    qr.background = '#FFF'; //背景色
-                    qr.backgroundAlpha = 0.8; // 背景の透過率
-                    qr.foreground = '#000000'; //QRコード自体の色
-                    qr.foregroundAlpha = 1.0; //QRコード自体の透過率
-                    qr.level = 'L'; // QRコードの誤り訂正レベル
-                    qr.size = 240; // QRコードのサイズ
-                    // QRコードをflexboxで表示
-                    document.getElementById('qrOutput').style.display = 'flex';
-                    document.getElementById('qrDownload').innerHTML = 'ダウンロード方法：右クリック⇒名前を付けて画像を保存';
-                    document.getElementById('qrDownload').style.visibility = 'visible';
-                })();
-                // png出力用コード
-                //var cvs = document.getElementById("qr");
-                //var png = cvs.toDataURL();
-                //document.getElementById("newImg").src = png;
-            });
-        }
-    </script>
+    <script type="text/javascript" src="script.js"></script>
+
+    <div class="container-mob">
+        <div id="main-mob">
+            <div class="qrblock">
+                <p class="titleQr">QRコード作成</p>
+                <p class="qrcomment">QRコードで生成したいURLを入力してください。</p>
+            </div>
+            <div class="row mt-5 searchBox">
+                <input id="isbn-mob" type="text" name="isbn" value="">
+                <button id="getqrInfo-mob" class="btn btn-default">QRコードを生成</button>
+            </div>
+            <p id="qrDownload-mob"></p>
+            <div id="qrOutput-mob">
+                <canvas id="qr-mob"></canvas>
+                <!-- <div class="ml-2"><img id="newImg"></div> -->
+            </div>
+            <div class="resetQr">
+                <input id="qrReset-mob" type="button" value="URLリセット" onclick="window.location.reload();" />
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="scriptMob.js"></script>
 </body>
 
 </html>

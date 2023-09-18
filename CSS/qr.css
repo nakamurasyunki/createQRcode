@@ -4,6 +4,10 @@
     font-family: "Arial Black";
 }
 
+.container-mob {
+    display: none;
+}
+
 #qrOutput {
     display: none;
 }
